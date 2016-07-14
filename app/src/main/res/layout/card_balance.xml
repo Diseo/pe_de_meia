@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:layout_marginBottom="8dp"
-    android:background="@drawable/sticker_yellow_bg">
+    android:background="@drawable/sticker_light_yellow_bg">
 
     <TextView
         android:id="@+id/balanceTitle"

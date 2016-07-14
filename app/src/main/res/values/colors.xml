@@ -9,9 +9,11 @@
     <color name="blue">#0288d1</color>
     <color name="salmon">#ff6b65</color>
     <color name="purple">#755b83</color>
+    <color name="purple_light">#b39ddb</color>
+    <color name="violet">#86537d</color>
+    <color name="violet_light">#ce93d8</color>
     <color name="grey00">#fafafa</color>
     <color name="grey_warm">#d4c6b6</color>
     <color name="yellow">#fceead</color>
     <color name="blue_light">#90caf9</color>
-    <color name="violet">#86537d</color>
 </resources>

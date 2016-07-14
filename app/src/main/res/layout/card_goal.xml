@@ -27,12 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/sticker_purple_bg" />
+            android:background="@drawable/sticker_light_purple_bg" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/sticker_violet_bg" />
+            android:background="@drawable/sticker_light_violet_bg" />
 
     </LinearLayout>
 </LinearLayout>
