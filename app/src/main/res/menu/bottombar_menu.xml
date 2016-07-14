@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/incoming_btn"
+            android:icon="@drawable/ic_call_received_black_24dp"
+            android:title="ganhos" />
+        <item
+            android:id="@+id/goals_btn"
+            android:icon="@drawable/ic_sock"
+            android:title="objetivos" />
+        <item
+            android:id="@+id/outgoing_btn"
+            android:icon="@drawable/ic_call_made_black_24dp"
+            android:title="despesas" />
+
+</menu>
