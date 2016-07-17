@@ -16,7 +16,9 @@ import java.util.List;
 /**
  * Created by Avell B155 on 13/07/16.
  */
-public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.CustomViewHolder>{
+public class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    private static final int TYPE_HEADER = 0;
+    private static final int TYPE_ITEM = 1;
     private Context mContext;
     private List<Goal> goals = null;
 
@@ -26,18 +28,34 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.CustomViewHold
     }
 
     @Override
-    public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_goal, null);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+//        View view = new LayoutInflater(viewGroup);
+        if (viewType == TYPE_ITEM) {
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_goal, null);
+            return new VHItem(view);
+        } else if (viewType == TYPE_HEADER) {
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_balance, null);
+            return new VHHeader(view);
+        }
 
-        CustomViewHolder viewHolder = new CustomViewHolder(view);
-        return viewHolder;
+//        CustomViewHolder viewHolder = new CustomViewHolder(view);
+//        return viewHolder;
+        return null;
     }
 
     @Override
-    public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
-        Goal goal = goals.get(i);
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        customViewHolder.tv.setText(goal.getName());
+
+        if (holder instanceof VHItem) {
+            Goal goal = getItem(position);
+            TextView tv = ((VHItem) holder).tv;
+            tv.setText(goal.getName());
+            //cast holder to VHItem and set data
+        } else if (holder instanceof VHHeader) {
+            //cast holder to VHHeader and set data for header.
+        }
+
 
         //Setting text view title
 //        customViewHolder.textView.setText(Html.fromHtml(feedItem.getTitle()));
@@ -45,15 +63,40 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.CustomViewHold
 
     @Override
     public int getItemCount() {
-        return (null != goals ? goals.size() : 0);
+        return (null != goals ? goals.size() : 0) + 1;
     }
 
-    public class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected TextView tv;
+    @Override
+    public int getItemViewType(int position) {
+        if (isPositionHeader(position))
+            return TYPE_HEADER;
 
-        public CustomViewHolder(View view) {
-            super(view);
-            this.tv = (TextView) view.findViewById(R.id.goalTitle);
+        return TYPE_ITEM;
+    }
+
+    private boolean isPositionHeader(int position) {
+        return position == 0;
+    }
+
+    private Goal getItem(int position) {
+        return goals.get(position - 1);
+    }
+
+    class VHItem extends RecyclerView.ViewHolder {
+        TextView tv;
+
+        public VHItem(View itemView) {
+            super(itemView);
+            this.tv = (TextView) itemView.findViewById(R.id.goalTitle);
+        }
+    }
+
+    class VHHeader extends RecyclerView.ViewHolder {
+        TextView tv;
+
+        public VHHeader(View itemView) {
+            super(itemView);
+//            this.tv = (TextView) itemView.findViewById(R.id.balanceTitle);
         }
     }
 }
