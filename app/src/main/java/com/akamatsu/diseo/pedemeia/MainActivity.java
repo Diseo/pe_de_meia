@@ -2,6 +2,7 @@ package com.akamatsu.diseo.pedemeia;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity
 
         /*mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),
                 findViewById(R.id.myScrollingContent), savedInstanceState);*/
-        mBottomBar = BottomBar.attach(findViewById(R.id.myCoordinator), savedInstanceState);
+        mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),findViewById(R.id.myCoordinator), savedInstanceState);
         mBottomBar.noTopOffset();
         mBottomBar.setMaxFixedTabs(2);
         mBottomBar.setDefaultTabPosition(1);
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity
 
                 for (int i = 0; i < 10; i++) {
                     Goal goal = realm.createObject(Goal.class);
-                    goal.setName("Bike " + i);
+                    goal.setName("Bicicleta " + i);
                     goal.setId(i);
                 }
             }
@@ -187,13 +188,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.my_info) {
             // Handle the camera action
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.config) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.logout) {
 
         }
 

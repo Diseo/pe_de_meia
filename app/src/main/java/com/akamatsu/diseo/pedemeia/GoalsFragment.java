@@ -3,17 +3,16 @@ package com.akamatsu.diseo.pedemeia;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.akamatsu.diseo.pedemeia.Adapter.GoalAdapter;
 import com.akamatsu.diseo.pedemeia.Model.Goal;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import io.realm.Realm;
@@ -27,8 +26,8 @@ import io.realm.RealmResults;
 public class GoalsFragment extends Fragment {
 
     private Realm realm;
-    private ListView mListView;
-    private GoalAdapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private GoalAdapter adapter;
 
     public static GoalsFragment newInstance(int instance) {
         GoalsFragment fragment = new GoalsFragment();
@@ -37,13 +36,17 @@ public class GoalsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_goals_test, container, false);
+        View view = inflater.inflate(R.layout.fragment_goals, container, false);
 
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this.getActivity()).build();
         realm = Realm.getInstance(realmConfiguration);
 
         RealmQuery<Goal> query = realm.where(Goal.class);
         RealmResults<Goal> result1 = query.findAll();
+
+        // Initialize recycler view
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
 //        TextView firstGoal = (TextView) view.findViewById(R.id.goalTitle);
 //        firstGoal.setText(result1.get(1).getName());
@@ -62,16 +65,19 @@ public class GoalsFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
+        adapter = new GoalAdapter(this.getActivity(), goals);
+        mRecyclerView.setAdapter(adapter);
+
 //        if(mAdapter == null) {
-            List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
-
-            mAdapter = new GoalAdapter(this.getActivity());
-            mAdapter.setData(goals);
-
-            mListView = (ListView) getActivity().findViewById(R.id.list_view);
-            mListView.setAdapter(mAdapter);
-            mAdapter.notifyDataSetChanged();
-            mListView.invalidate();
+//            List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
+//
+//            mAdapter = new GoalAdapter(this.getActivity(), goals);
+//
+//            mRecyclerView = (RecyclerView) getActivity().findViewById(R.id.list_view);
+//            mRecyclerView.setAdapter(mAdapter);
+//            mAdapter.notifyDataSetChanged();
+//            mRecyclerView.invalidate();
 //        }
     }
 

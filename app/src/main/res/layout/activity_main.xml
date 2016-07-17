@@ -20,7 +20,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         android:background="@color/polen_paper"
-        app:itemTextColor="@color/purple"
+        app:itemTextColor="@color/salmon"
         app:itemIconTint="@color/purple"
         app:itemTextAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
         app:headerLayout="@layout/nav_header_main"
