@@ -10,4 +10,5 @@
     <dimen name="sticker_stroke">3dp</dimen>
     <dimen name="sticker_radius">12dp</dimen>
     <dimen name="bar_height">40dp</dimen>
+    <dimen name="double_space">16dp</dimen>
 </resources>

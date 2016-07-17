@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recycler_view"
+<com.akamatsu.diseo.pedemeia.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nested_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerInParent="true"
-    android:paddingTop="8dp"
-    android:paddingBottom="56dp"
-    android:clipToPadding="false"
-    android:dividerHeight="0dp"
-    android:background="@color/grey_warm"/>
+    android:background="@color/grey_warm">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="8dp"
+        android:paddingBottom="112dp"
+        android:clipToPadding="false"
+        android:dividerHeight="0dp" />
+
+</com.akamatsu.diseo.pedemeia.MyNestedScrollView>

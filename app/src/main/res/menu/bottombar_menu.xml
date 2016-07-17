@@ -8,7 +8,7 @@
         <item
             android:id="@+id/goals_btn"
             android:icon="@drawable/ic_sock"
-            android:title="objetivos" />
+            android:title="home" />
         <item
             android:id="@+id/outgoing_btn"
             android:icon="@drawable/ic_call_made_black_24dp"

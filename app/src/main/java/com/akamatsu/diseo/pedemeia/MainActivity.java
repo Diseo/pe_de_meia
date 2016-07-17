@@ -6,6 +6,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -47,13 +48,22 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+
+                        Goal goal1 = realm.createObject(Goal.class);
+                        goal1.setName("Bike"+ goal1.getId());
+                    }
+                });
             }
         });
 
@@ -88,9 +98,9 @@ public class MainActivity extends AppCompatActivity
         fragments.add(OutgoingFragment.newInstance(0));
 
         mNavController =
-                new FragNavController(getSupportFragmentManager(), R.id.nested_scroll, fragments);
+                new FragNavController(getSupportFragmentManager(), R.id.container, fragments);
 
-        mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),findViewById(R.id.nested_scroll), savedInstanceState);
+        mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),findViewById(R.id.container), savedInstanceState);
         mBottomBar.setMaxFixedTabs(2);
         mBottomBar.setDefaultTabPosition(1);
         mBottomBar.setItems(R.menu.bottombar_menu);
@@ -101,12 +111,15 @@ public class MainActivity extends AppCompatActivity
                 switch (menuItemId) {
                     case R.id.incoming_btn:
                         mNavController.switchTab(INDEX_INCOMING);
+                        fab.hide();
                         break;
                     case R.id.goals_btn:
                         mNavController.switchTab(INDEX_GOALS);
+                        fab.show();
                         break;
                     case R.id.outgoing_btn:
                         mNavController.switchTab(INDEX_OUTGOING);
+                        fab.hide();
                         break;
                 }
             }
@@ -121,9 +134,9 @@ public class MainActivity extends AppCompatActivity
 
         // Setting colors for different tabs when there's more than three of them.
         // You can set colors for tabs in three different ways as shown below.
-        mBottomBar.mapColorForTab(0, "#00a970");
+        mBottomBar.mapColorForTab(0, getResources().getColor(R.color.green));
         mBottomBar.mapColorForTab(1, getResources().getColor(R.color.colorPrimaryDark));
-        mBottomBar.mapColorForTab(2, "#FF9052");
+        mBottomBar.mapColorForTab(2, getResources().getColor(R.color.orange));
 
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this).build();
         Realm.deleteRealm(realmConfiguration);
@@ -132,11 +145,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void execute(Realm realm) {
 
-                for (int i = 0; i < 10; i++) {
-                    Goal goal = realm.createObject(Goal.class);
-                    goal.setName("Bicicleta " + i);
-                    goal.setId(i);
-                }
+                Goal goal1 = realm.createObject(Goal.class);
+                goal1.setName("Macbook");
+
+//                for (int i = 0; i < 3; i++) {
+//                    Goal goal = realm.createObject(Goal.class);
+//                    goal.setName("Bicicleta " + i);
+//                    goal.setId(i);
+//                }
             }
         });
 

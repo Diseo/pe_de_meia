@@ -7,7 +7,6 @@
     android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/salmon"
     tools:context="com.akamatsu.diseo.pedemeia.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -27,12 +26,16 @@
     <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
-        android:visibility="gone"
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+        app:layout_behavior="com.akamatsu.diseo.pedemeia.ScrollAwareFABBehavior"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="64dp"
+        app:background="@drawable/sticker_light_blue_bg"
+        app:backgroundTint="@color/blue_light"
+        android:src="@drawable/ic_add_black_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

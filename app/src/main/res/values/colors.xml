@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">@color/purple</color>
     <color name="colorPrimaryDark">#695175</color>
-    <color name="colorAccent">@color/salmon</color>
+    <color name="colorAccent">@color/polen_paper</color>
 
     <color name="white">#ffffff</color>
     <color name="polen_paper">#f5e3d0</color>
@@ -11,6 +11,10 @@
 
     <color name="yellow">#fceead</color>
 
+    <color name="green">#00b45a</color>
+    <color name="green_light">#6cde96</color>
+    <color name="orange">#FF9052</color>
+    <color name="orange_light">#ffc19e</color>
     <color name="salmon">#ff6b65</color>
     <color name="salmon_light">#fea9a6</color>
     <color name="blue">#0288d1</color>

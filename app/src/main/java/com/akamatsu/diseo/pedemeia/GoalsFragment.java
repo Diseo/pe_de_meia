@@ -48,6 +48,7 @@ public class GoalsFragment extends Fragment {
 
         // Initialize recycler view
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
 
