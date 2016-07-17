@@ -1,8 +1,10 @@
 package com.akamatsu.diseo.pedemeia;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -47,6 +49,7 @@ public class GoalsFragment extends Fragment {
         // Initialize recycler view
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+
 
 //        TextView firstGoal = (TextView) view.findViewById(R.id.goalTitle);
 //        firstGoal.setText(result1.get(1).getName());

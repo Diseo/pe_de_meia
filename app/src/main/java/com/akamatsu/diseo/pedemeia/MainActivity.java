@@ -88,15 +88,13 @@ public class MainActivity extends AppCompatActivity
         fragments.add(OutgoingFragment.newInstance(0));
 
         mNavController =
-                new FragNavController(getSupportFragmentManager(), R.id.container, fragments);
+                new FragNavController(getSupportFragmentManager(), R.id.nested_scroll, fragments);
 
-        /*mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),
-                findViewById(R.id.myScrollingContent), savedInstanceState);*/
-        mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),findViewById(R.id.myCoordinator), savedInstanceState);
-        mBottomBar.noTopOffset();
+        mBottomBar = BottomBar.attachShy((CoordinatorLayout) findViewById(R.id.myCoordinator),findViewById(R.id.nested_scroll), savedInstanceState);
         mBottomBar.setMaxFixedTabs(2);
         mBottomBar.setDefaultTabPosition(1);
         mBottomBar.setItems(R.menu.bottombar_menu);
+
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
