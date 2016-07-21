@@ -57,6 +57,11 @@ public class GoalsFragment extends Fragment {
 //        TextView numGoals = (TextView) view.findViewById(R.id.balanceTitle);
 //        numGoals.setText("Balanço (" + realm.where(Goal.class).count() + ")");
 
+        List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
+        adapter = new GoalAdapter(this.getActivity(), goals);
+        mRecyclerView.setAdapter(adapter);
+//        mRecyclerView.invalidate();
+
         return view;
     }
 
@@ -69,9 +74,7 @@ public class GoalsFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
-        adapter = new GoalAdapter(this.getActivity(), goals);
-        mRecyclerView.setAdapter(adapter);
+
 
 //        if(mAdapter == null) {
 //            List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());

@@ -1,5 +1,6 @@
 package com.akamatsu.diseo.pedemeia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.CoordinatorLayout;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     private final int INDEX_OUTGOING = FragNavController.TAB3;
 
     private Realm realm;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +55,21 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+//                Intent intent = new Intent(, AddGoalActivity.class);
+                Intent intent = new Intent(getApplicationContext(), AddGoalActivity.class);
+                startActivity(intent);
 
-                realm.executeTransaction(new Realm.Transaction() {
+                mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+//                mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount() - 1);
+
+                /*realm.executeTransaction(new Realm.Transaction() {
                     @Override
                     public void execute(Realm realm) {
 
                         Goal goal1 = realm.createObject(Goal.class);
                         goal1.setName("Bike"+ goal1.getId());
                     }
-                });
+                });*/
             }
         });
 

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green"
-        android:elevation="6dp"
+        android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
         app:tabIndicatorColor="@color/green_light"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>

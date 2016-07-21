@@ -24,6 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.akamatsu.diseo.pedemeia.AddGoalActivity"
+            android:label="@string/add_goal_text"
+            android:theme="@style/BlueTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

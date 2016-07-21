@@ -99,6 +99,19 @@ public class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 //            this.tv = (TextView) itemView.findViewById(R.id.balanceTitle);
         }
     }
+
+    // Insert a new item to the RecyclerView on a predefined position
+    public void insert(int position, Goal goal) {
+        goals.add(position, goal);
+        notifyItemInserted(position);
+    }
+
+    // Remove a RecyclerView item containing a specified Data object
+    public void remove(Goal goal) {
+        int position = goals.indexOf(goal);
+        goals.remove(position);
+        notifyItemRemoved(position);
+    }
 }
 
 
