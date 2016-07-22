@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
         toggle.setDrawerIndicatorEnabled(false);
-        toggle.setHomeAsUpIndicator(R.drawable.ic_menu);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_face);
 
         toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override

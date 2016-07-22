@@ -5,13 +5,13 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="6dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:padding="@dimen/double_space"
+        android:layout_marginTop="@dimen/single_space"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="@dimen/single_space"
+        android:layout_marginLeft="@dimen/single_space"
+        android:layout_marginEnd="@dimen/single_space"
+        android:layout_marginRight="@dimen/single_space"
         android:elevation="4dp"
         android:clickable="true"
         android:background="@drawable/card_light_blue">
@@ -31,13 +31,25 @@
             android:layout_marginBottom="8dp">
 
             <View
+                android:id="@+id/moneyBg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/sticker_light_purple_bg" />
 
+            <ImageView
+                android:id="@+id/moneyIcon"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_white_bg"
+                android:paddingStart="5dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/ic_money"/>
+
             <View
+                android:id="@+id/moneyBar"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
                 android:background="@drawable/bar_purple_bg" />
 
         </RelativeLayout>
@@ -47,13 +59,25 @@
             android:layout_height="@dimen/bar_height">
 
             <View
+                android:id="@+id/timeBg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/sticker_light_violet_bg" />
 
+            <ImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_white_bg"
+                android:paddingStart="7dp"
+                android:paddingEnd="19dp"
+                android:src="@drawable/ic_time"/>
+
             <View
+                android:id="@+id/timeBar"
                 android:layout_width="280dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="32dp"
                 android:background="@drawable/bar_violet_bg" />
 
         </RelativeLayout>

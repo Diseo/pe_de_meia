@@ -36,6 +36,14 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/bar_salmon_bg" />
 
+                <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="balanço"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"/>
+
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>

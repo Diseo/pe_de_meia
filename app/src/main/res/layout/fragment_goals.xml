@@ -2,22 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-<com.akamatsu.diseo.pedemeia.MyNestedScrollView
-    android:id="@+id/nested_scroll"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_warm">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <com.akamatsu.diseo.pedemeia.MyNestedScrollView
+        android:id="@+id/nested_scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:paddingTop="8dp"
-        android:paddingBottom="64dp"
-        android:clipToPadding="false"
-        android:dividerHeight="0dp" />
+        android:layout_height="match_parent"
+        android:background="@color/grey_warm">
 
-</com.akamatsu.diseo.pedemeia.MyNestedScrollView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingTop="8dp"
+            android:paddingBottom="64dp"
+            android:clipToPadding="false"
+            android:dividerHeight="0dp" />
+
+    </com.akamatsu.diseo.pedemeia.MyNestedScrollView>
+
 </LinearLayout>
