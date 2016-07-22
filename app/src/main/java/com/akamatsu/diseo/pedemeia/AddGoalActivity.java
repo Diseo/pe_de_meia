@@ -71,8 +71,12 @@ public class AddGoalActivity extends AppCompatActivity {
                     @Override
                     public void execute(Realm realm) {
 
-                        Goal goal1 = realm.createObject(Goal.class);
-                        goal1.setName(goalName.getText().toString());
+                        Goal goal = realm.createObject(Goal.class);
+                        if (goalName.getText().toString().trim().length() > 0) {
+                            goal.setName(goalName.getText().toString());
+                        } else {
+                            goal.setName("Objetivo " + realm.where(Goal.class).findAll().size());
+                        }
                     }
                 });
 

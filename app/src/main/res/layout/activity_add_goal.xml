@@ -12,13 +12,14 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="0dp"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/blue_light"
+            android:background="@color/transparent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -43,11 +44,13 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+            <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:textSize="48sp"
+                android:lineSpacingMultiplier="0.9"
+                android:letterSpacing="-0.02"
                 android:text="Qual é o seu objetivo?"/>
 
             <EditText

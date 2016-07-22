@@ -19,7 +19,26 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bar_height">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/sticker_light_salmon_bg" />
+
+                <View
+                    android:id="@+id/balance_bar"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bar_salmon_bg" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -33,7 +52,7 @@
         app:layout_behavior="com.akamatsu.diseo.pedemeia.ScrollAwareFABBehavior"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="72dp"
         app:background="@drawable/sticker_light_blue_bg"
         app:backgroundTint="@color/blue_light"
         android:src="@drawable/ic_add_black_24dp" />

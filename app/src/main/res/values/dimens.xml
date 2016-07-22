@@ -8,7 +8,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="bar_radius">8dp</dimen>
     <dimen name="sticker_stroke">3dp</dimen>
-    <dimen name="sticker_radius">12dp</dimen>
+    <dimen name="sticker_radius">16dp</dimen>
     <dimen name="bar_height">36dp</dimen>
     <dimen name="double_space">16dp</dimen>
     <dimen name="single_space">8dp</dimen>

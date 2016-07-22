@@ -10,7 +10,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.akamatsu.diseo.pedemeia.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
@@ -26,7 +25,7 @@
         </activity>
         <activity
             android:name="com.akamatsu.diseo.pedemeia.AddGoalActivity"
-            android:label="@string/add_goal_text"
+            android:label=""
             android:theme="@style/BlueTheme.NoActionBar">
         </activity>
     </application>

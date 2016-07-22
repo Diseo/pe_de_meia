@@ -29,18 +29,16 @@ public class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-//        View view = new LayoutInflater(viewGroup);
-        if (viewType == TYPE_ITEM) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_goal, null);
+        return new VHItem(view);
+
+        /*if (viewType == TYPE_ITEM) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_goal, null);
             return new VHItem(view);
         } else if (viewType == TYPE_HEADER) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_balance, null);
             return new VHHeader(view);
-        }
-
-//        CustomViewHolder viewHolder = new CustomViewHolder(view);
-//        return viewHolder;
-        return null;
+        }*/
     }
 
     @Override
@@ -55,21 +53,17 @@ public class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         } else if (holder instanceof VHHeader) {
             //cast holder to VHHeader and set data for header.
         }
-
-
-        //Setting text view title
-//        customViewHolder.textView.setText(Html.fromHtml(feedItem.getTitle()));
     }
 
     @Override
     public int getItemCount() {
-        return (null != goals ? goals.size() : 0) + 1;
+        return (null != goals ? goals.size() : 0);
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (isPositionHeader(position))
-            return TYPE_HEADER;
+//        if (isPositionHeader(position))
+//            return TYPE_HEADER;
 
         return TYPE_ITEM;
     }
@@ -79,8 +73,13 @@ public class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     private Goal getItem(int position) {
-        return goals.get(position - 1);
+        if (goals == null || goals.get(position) == null) {
+            return null;
+        }
+        return goals.get(position);
     }
+
+
 
     class VHItem extends RecyclerView.ViewHolder {
         TextView tv;

@@ -3,13 +3,18 @@ package com.akamatsu.diseo.pedemeia;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.akamatsu.diseo.pedemeia.Adapter.GoalAdapter;
 import com.akamatsu.diseo.pedemeia.Model.Goal;
@@ -30,6 +35,7 @@ public class GoalsFragment extends Fragment {
     private Realm realm;
     private RecyclerView mRecyclerView;
     private GoalAdapter adapter;
+    private RelativeLayout balance;
 
     public static GoalsFragment newInstance(int instance) {
         GoalsFragment fragment = new GoalsFragment();
@@ -57,9 +63,13 @@ public class GoalsFragment extends Fragment {
 //        TextView numGoals = (TextView) view.findViewById(R.id.balanceTitle);
 //        numGoals.setText("Balanço (" + realm.where(Goal.class).count() + ")");
 
-        List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
-        adapter = new GoalAdapter(this.getActivity(), goals);
-        mRecyclerView.setAdapter(adapter);
+//        adapter = new GoalAdapter(this.getActivity(), goals);
+//        mRecyclerView.setAdapter(adapter);
+//        RecyclerView.ItemAnimator itemAnimator = new DefaultItemAnimator();
+//        itemAnimator.setAddDuration(5000);
+//        itemAnimator.setRemoveDuration(1000);
+//        mRecyclerView.setItemAnimator(itemAnimator);
+
 //        mRecyclerView.invalidate();
 
         return view;
@@ -73,6 +83,10 @@ public class GoalsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
+        final List<Goal> goals = new ArrayList<Goal>(realm.where(Goal.class).findAll());
+        adapter = new GoalAdapter(this.getActivity(), goals);
+        mRecyclerView.setAdapter(adapter);
 
 
 

@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.akamatsu.diseo.pedemeia.Font.FontCache;
 import com.akamatsu.diseo.pedemeia.Model.Goal;
 import com.ncapdevi.fragnav.FragNavController;
 import com.roughike.bottombar.BottomBar;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity
         mBottomBar.setMaxFixedTabs(2);
         mBottomBar.setDefaultTabPosition(1);
         mBottomBar.setItems(R.menu.bottombar_menu);
+        mBottomBar.setTypeFace("Rubik-Regular.ttf");
 
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
