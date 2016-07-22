@@ -61,8 +61,7 @@
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="72dp"
-        app:background="@drawable/sticker_light_blue_bg"
-        app:backgroundTint="@color/blue_light"
+        app:backgroundTint="@color/blue"
         android:src="@drawable/ic_add_black_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

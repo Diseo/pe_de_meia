@@ -15,23 +15,18 @@ public class DisplayTextView extends TextView {
     public DisplayTextView(Context context) {
         super(context);
 
-        applyCustomFont(context);
+        CustomFontUtils.applyCustomFont(this, context);
     }
 
     public DisplayTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        applyCustomFont(context);
+        CustomFontUtils.applyCustomFont(this, context);
     }
 
     public DisplayTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        applyCustomFont(context);
-    }
-
-    private void applyCustomFont(Context context) {
-        Typeface customFont = FontCache.getTypeface("Rubik-Regular.ttf", context);
-        setTypeface(customFont);
+        CustomFontUtils.applyCustomFont(this, context);
     }
 }

@@ -1,5 +1,6 @@
 package com.akamatsu.diseo.pedemeia;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -8,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.akamatsu.diseo.pedemeia.View.CustomFontTabLayout;
 
 /**
  * Created by niccapdevila on 3/26/16.
@@ -23,9 +26,9 @@ public class OutgoingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_outgoing, container, false);
 
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Nova despesa"));
-        tabLayout.addTab(tabLayout.newTab().setText("Recorrentes"));
+        CustomFontTabLayout tabLayout = (CustomFontTabLayout) view.findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("nova"));
+        tabLayout.addTab(tabLayout.newTab().setText("recorrentes"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);

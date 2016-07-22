@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+    android:id="@+id/root"
     android:fitsSystemWindows="true"
     android:fillViewport="true"
     android:orientation="vertical"
@@ -19,48 +19,38 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/transparent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/double_space" >
+        android:layout_height="match_parent" >
 
-        <Button
+        <com.akamatsu.diseo.pedemeia.View.CustomFontButton
             android:id="@+id/next_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/double_space"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:background="@drawable/btn_blue"
+            android:textSize="16sp"
+            android:textColor="@color/white"
             android:text="PRÓXIMO"/>
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/container"
             android:layout_above="@id/next_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:padding="@dimen/double_space">
 
-            <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="48sp"
-                android:lineSpacingMultiplier="0.9"
-                android:letterSpacing="-0.02"
-                android:text="Qual é o seu objetivo?"/>
+            <include layout="@layout/fragment_add_goal_step1" />
 
-            <EditText
-                android:id="@+id/goal_name_input"
-                style="@style/EditTextPedemeiaStyle"
-                android:inputType="text"
-                android:layout_centerInParent="true"
-                android:hint="@string/add_goal_name_hint" />
-
-        </LinearLayout>
+        </FrameLayout>
 
     </RelativeLayout>
 

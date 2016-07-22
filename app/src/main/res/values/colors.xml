@@ -11,13 +11,15 @@
 
     <color name="yellow">#fceead</color>
 
-    <color name="green">#00b45a</color>
-    <color name="green_light">#6cde96</color>
-    <color name="orange">#FF9052</color>
-    <color name="orange_light">#ffc19e</color>
+    <color name="green_dark">#237a4f</color>
+    <color name="green">#35c87f</color>
+    <color name="green_light">#51d694</color>
+    <color name="orange_dark">#f27a38</color>
+    <color name="orange">#ff9e69</color>
+    <color name="orange_light">#f7a577</color>
     <color name="salmon">#ff6b65</color>
     <color name="salmon_light">#fea9a6</color>
-    <color name="blue">#0288d1</color>
+    <color name="blue">#586799</color>
     <color name="blue_light">#90caf9</color>
     <color name="purple">#7d6888</color>
     <color name="purple_light">#d1c4e9</color>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="48sp"
+        android:textColor="@color/blue"
+        android:lineSpacingMultiplier="0.9"
+        android:letterSpacing="-0.02"
+        android:text="Qual é o seu objetivo?"/>
+
+    <EditText
+        android:id="@+id/goal_name_input"
+        style="@style/EditTextPedemeiaStyle"
+        android:inputType="text"
+        android:layout_centerInParent="true"
+        android:hint="@string/add_goal_name_hint" />
+
+</LinearLayout>
