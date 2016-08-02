@@ -36,6 +36,11 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/bar_salmon_bg" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/white_mask"/>
+
                 <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

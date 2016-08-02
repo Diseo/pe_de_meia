@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.akamatsu.diseo.pedemeia.Font.FontCache;
+import com.akamatsu.diseo.pedemeia.Model.Balance;
 import com.akamatsu.diseo.pedemeia.Model.Goal;
 import com.ncapdevi.fragnav.FragNavController;
 import com.roughike.bottombar.BottomBar;
@@ -153,8 +154,15 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void execute(Realm realm) {
 
+                Balance balance = realm.createObject(Balance.class);
+                balance.setValue(5000f);
+                balance.setExtra(2000f);
+
                 Goal goal1 = realm.createObject(Goal.class);
                 goal1.setName("Macbook");
+                goal1.setPrice(10000f);
+                goal1.setDeadline(100f);
+                goal1.setInvestedValue(2000f);
 
 //                for (int i = 0; i < 3; i++) {
 //                    Goal goal = realm.createObject(Goal.class);

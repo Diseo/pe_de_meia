@@ -6,8 +6,8 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/double_space"
-        android:layout_marginTop="@dimen/single_space"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/single_space"
         android:layout_marginStart="@dimen/single_space"
         android:layout_marginLeft="@dimen/single_space"
         android:layout_marginEnd="@dimen/single_space"
@@ -41,17 +41,34 @@
                 android:id="@+id/moneyIcon"
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/card_white_bg"
                 android:paddingStart="5dp"
                 android:paddingEnd="16dp"
                 android:src="@drawable/ic_money"/>
 
-            <View
-                android:id="@+id/moneyBar"
-                android:layout_width="150dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:background="@drawable/bar_purple_bg" />
+                android:layout_marginStart="32dp" >
+
+                <View
+                    android:id="@+id/moneyBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/bar_purple_bg" />
+                <View
+                    android:id="@+id/moneyEmpty"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_mask"
+                android:layout_marginStart="32dp" />
 
         </RelativeLayout>
 
@@ -74,12 +91,30 @@
                 android:paddingEnd="19dp"
                 android:src="@drawable/ic_time"/>
 
-            <View
-                android:id="@+id/timeBar"
-                android:layout_width="280dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="32dp"
-                android:background="@drawable/bar_violet_bg" />
+                android:layout_marginStart="32dp" >
+
+                <View
+                    android:id="@+id/timeBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    android:background="@drawable/bar_violet_bg" />
+                <View
+                    android:id="@+id/timeEmpty"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.05"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_mask"
+                android:layout_marginStart="32dp" />
 
         </RelativeLayout>
 

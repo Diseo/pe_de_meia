@@ -45,9 +45,9 @@
             android:id="@+id/container"
             android:layout_above="@id/next_btn"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/double_space">
+            android:layout_height="match_parent">
 
+            <include layout="@layout/fragment_add_goal_step2" />
             <include layout="@layout/fragment_add_goal_step1" />
 
         </FrameLayout>

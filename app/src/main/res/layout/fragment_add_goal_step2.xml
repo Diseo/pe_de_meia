@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/stepOne"
+    android:id="@+id/stepTwo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -15,13 +15,13 @@
         android:textColor="@color/blue"
         android:lineSpacingMultiplier="0.9"
         android:letterSpacing="-0.02"
-        android:text="Qual é o seu objetivo?"/>
+        android:text="Qual o valor?"/>
 
     <EditText
-        android:id="@+id/goal_name_input"
+        android:id="@+id/goal_price_input"
         style="@style/EditTextPedemeiaStyle"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_centerInParent="true"
-        android:hint="@string/add_goal_name_hint" />
+        android:hint="@string/add_goal_price_hint" />
 
 </LinearLayout>

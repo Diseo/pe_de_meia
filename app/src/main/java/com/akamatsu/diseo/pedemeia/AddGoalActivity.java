@@ -6,6 +6,8 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.akamatsu.diseo.pedemeia.Model.Goal;
 import com.ncapdevi.fragnav.FragNavController;
@@ -34,6 +38,10 @@ public class AddGoalActivity extends AppCompatActivity {
     private Realm realm;
     private Button nextBtn;
     private EditText goalName;
+    private EditText goalPrice;
+    private int step;
+    private LinearLayout stepOne;
+    private LinearLayout stepTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,32 +63,54 @@ public class AddGoalActivity extends AppCompatActivity {
 
         initInstances();
         setupClickListeners();
-
     }
 
     private void initInstances() {
-        goalName = (EditText) findViewById(R.id.goal_name_input);
+//        AddGoalStep1Fragment one = new AddGoalStep1Fragment();
+//        AddGoalStep1Fragment two = new AddGoalStep1Fragment();
+//        FragmentManager fm = getSupportFragmentManager();
+//        fm.beginTransaction().add(R.id.container, one).commit();
+//        fm.beginTransaction().add(R.id.container, two, "step2").commit();
         nextBtn = (Button) findViewById(R.id.next_btn);
+        goalName = (EditText) findViewById(R.id.goal_name_input);
+        goalPrice = (EditText) findViewById(R.id.goal_price_input);
+
+        stepOne = (LinearLayout) findViewById(R.id.stepOne);
+        stepTwo = (LinearLayout) findViewById(R.id.stepTwo);
+        stepTwo.setVisibility(View.GONE);
+
+        step = 1;
     }
 
     public void setupClickListeners(){
         nextBtn.setOnClickListener(new ViewGroup.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
+            public void onClick(final View v) {
+                if (step == 1) {
+                    stepTwo.setVisibility(View.VISIBLE);
+                    stepOne.setVisibility(View.GONE);
+                    step = 2;
+                } else {
 
-                        Goal goal = realm.createObject(Goal.class);
-                        if (goalName.getText().toString().trim().length() > 0) {
-                            goal.setName(goalName.getText().toString());
-                        } else {
-                            goal.setName("Objetivo " + realm.where(Goal.class).findAll().size());
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+
+                            Goal goal = realm.createObject(Goal.class);
+                            if (goalName.getText().toString().trim().length() > 0) {
+                                goal.setName(goalName.getText().toString());
+                            } else {
+                                goal.setName("Objetivo " + realm.where(Goal.class).findAll().size());
+                            }
+                            float price = Float.valueOf(goalPrice.getText().toString());
+                            goal.setPrice(price);
+                            goal.setDeadline(100f);
+                            goal.setInvestedValue(200f);
                         }
-                    }
-                });
+                    });
 
-                finish();
+                    finish();
+                }
             }
         });
     }

@@ -9,7 +9,6 @@
     android:right="@dimen/sticker_stroke" >
 
     <shape android:shape="rectangle" >
-        <corners android:radius="@dimen/bar_radius" />
         <solid android:color="@color/salmon" />
     </shape>
 

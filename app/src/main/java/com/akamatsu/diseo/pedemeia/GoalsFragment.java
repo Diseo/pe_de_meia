@@ -75,6 +75,10 @@ public class GoalsFragment extends Fragment {
         return view;
     }
 
+    private void showDetails(int position) {
+
+    }
+
     @Override
     public void onStart() {
         super.onStart();
