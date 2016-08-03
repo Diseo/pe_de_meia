@@ -29,6 +29,11 @@
             android:label=""
             android:theme="@style/BlueTheme.NoActionBar">
         </activity>
+        <activity
+            android:name="com.akamatsu.diseo.pedemeia.BalanceActivity"
+            android:label=""
+            android:theme="@style/YellowTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

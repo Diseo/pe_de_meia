@@ -15,11 +15,12 @@
         android:textColor="@color/blue"
         android:lineSpacingMultiplier="0.9"
         android:letterSpacing="-0.02"
-        android:text="Qual o valor?"/>
+        android:text="Qual é\no valor?"/>
 
     <EditText
         android:id="@+id/goal_price_input"
         style="@style/EditTextPedemeiaStyle"
+        android:layout_marginBottom="0dp"
         android:inputType="number"
         android:layout_centerInParent="true"
         android:hint="@string/add_goal_price_hint" />

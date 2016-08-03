@@ -22,6 +22,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
             <RelativeLayout
+                android:id="@+id/balanceStatus"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/bar_height">
 
@@ -31,7 +32,7 @@
                     android:background="@drawable/sticker_light_salmon_bg" />
 
                 <View
-                    android:id="@+id/balance_bar"
+                    android:id="@+id/balanceBar"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/bar_salmon_bg" />

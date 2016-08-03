@@ -18,13 +18,18 @@
         <item name="android:fillViewport">true</item>
     </style>
 
-    <style name="BlueTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BlueTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/blue_light</item>
         <item name="colorPrimaryDark">#76b8ed</item>
         <item name="colorAccent">@color/blue</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="BlueTheme.NoActionBar">
+    <style name="YellowTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">#ffd866</item>
+        <item name="colorAccent">@color/blue</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

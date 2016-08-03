@@ -1,5 +1,6 @@
 package com.akamatsu.diseo.pedemeia;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.CoordinatorLayout;
@@ -13,6 +14,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,6 +82,28 @@ public class AddGoalActivity extends AppCompatActivity {
         stepTwo = (LinearLayout) findViewById(R.id.stepTwo);
         stepTwo.setVisibility(View.GONE);
 
+        goalPrice.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                if (s.toString().equals("")) {
+                    nextBtn.setEnabled(false);
+                } else {
+                    nextBtn.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         step = 1;
     }
 
@@ -89,6 +114,8 @@ public class AddGoalActivity extends AppCompatActivity {
                 if (step == 1) {
                     stepTwo.setVisibility(View.VISIBLE);
                     stepOne.setVisibility(View.GONE);
+                    nextBtn.setEnabled(false);
+                    nextBtn.setText("CONCLUIR");
                     step = 2;
                 } else {
 

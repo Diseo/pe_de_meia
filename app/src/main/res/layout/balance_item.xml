@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"  android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/single_space"
+        android:layout_marginStart="@dimen/double_space" >
+
+        <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
+            android:id="@+id/transactionName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="_name"
+            android:textSize="20sp"/>
+
+        <com.akamatsu.diseo.pedemeia.Font.DisplayTextView
+            android:id="@+id/transactionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="_value"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

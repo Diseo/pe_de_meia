@@ -17,10 +17,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 import com.akamatsu.diseo.pedemeia.Font.FontCache;
 import com.akamatsu.diseo.pedemeia.Model.Balance;
 import com.akamatsu.diseo.pedemeia.Model.Goal;
+import com.akamatsu.diseo.pedemeia.Model.Transaction;
 import com.ncapdevi.fragnav.FragNavController;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity
 
     private Realm realm;
     private RecyclerView mRecyclerView;
+    private RelativeLayout balanceStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,14 +167,24 @@ public class MainActivity extends AppCompatActivity
                 goal1.setDeadline(100f);
                 goal1.setInvestedValue(2000f);
 
-//                for (int i = 0; i < 3; i++) {
-//                    Goal goal = realm.createObject(Goal.class);
-//                    goal.setName("Bicicleta " + i);
-//                    goal.setId(i);
-//                }
+                Transaction incoming = realm.createObject(Transaction.class);
+                incoming.setName("Compras");
+                incoming.setValue(500f);
+
+                Transaction incoming2 = realm.createObject(Transaction.class);
+                incoming2.setName("Contas");
+                incoming2.setValue(200f);
             }
         });
 
+        balanceStatus = (RelativeLayout) findViewById(R.id.balanceStatus);
+        balanceStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BalanceActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -15,11 +15,12 @@
         android:textColor="@color/blue"
         android:lineSpacingMultiplier="0.9"
         android:letterSpacing="-0.02"
-        android:text="Qual é o seu objetivo?"/>
+        android:text="Qual é o \nseu objetivo?"/>
 
     <EditText
         android:id="@+id/goal_name_input"
         style="@style/EditTextPedemeiaStyle"
+        android:layout_marginBottom="0dp"
         android:inputType="text"
         android:layout_centerInParent="true"
         android:hint="@string/add_goal_name_hint" />

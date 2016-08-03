@@ -23,35 +23,27 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content">
 
-        <com.akamatsu.diseo.pedemeia.View.CustomFontButton
-            android:id="@+id/next_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/double_space"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            android:background="@drawable/btn_blue"
-            android:textSize="16sp"
-            android:textColor="@color/white"
-            android:text="PRÓXIMO"/>
+        <include layout="@layout/fragment_add_goal_step2" />
+        <include layout="@layout/fragment_add_goal_step1" />
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_above="@id/next_btn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    </FrameLayout>
 
-            <include layout="@layout/fragment_add_goal_step2" />
-            <include layout="@layout/fragment_add_goal_step1" />
-
-        </FrameLayout>
-
-    </RelativeLayout>
+    <com.akamatsu.diseo.pedemeia.View.CustomFontButton
+        android:id="@+id/next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/double_space"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:background="@drawable/btn_blue"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="PRÓXIMO"/>
 
 </LinearLayout>
